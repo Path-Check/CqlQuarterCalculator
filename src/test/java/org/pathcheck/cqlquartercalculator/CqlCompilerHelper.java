@@ -17,7 +17,7 @@ import org.fhir.ucum.UcumException;
 import org.fhir.ucum.UcumService;
 import org.opencds.cqf.cql.evaluator.engine.elm.LibraryMapper;
 
-public class TranslatorHelper {
+public class CqlCompilerHelper {
 
     public Library translate(String file) throws UcumException, IOException {
         ModelManager modelManager = new ModelManager();
@@ -25,7 +25,7 @@ public class TranslatorHelper {
         UcumService ucumService = new UcumEssenceService(UcumEssenceService.class.getResourceAsStream("/ucum-essence.xml"));
 
         CqlCompiler compiler = new CqlCompiler(null, modelManager, libraryManager, ucumService);
-        compiler.run(TranslatorHelper.class.getResourceAsStream(file));
+        compiler.run(CqlCompilerHelper.class.getResourceAsStream(file));
 
         if (compiler.getErrors().size() > 0) {
             System.err.println("Translation failed due to errors:");

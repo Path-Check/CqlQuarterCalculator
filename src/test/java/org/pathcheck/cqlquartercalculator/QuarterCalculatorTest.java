@@ -30,7 +30,7 @@ public class QuarterCalculatorTest implements ITest {
   public static Object[][] dataMethod() throws UcumException, IOException {
     List<Object[]> testsToRun = new ArrayList<>();
 
-    Library library = translate("QuarterCalculator-1.0.0.cql");
+    Library library = new CqlCompilerHelper().translate("QuarterCalculator-1.0.0.cql");
     for (ExpressionDef exp : library.getStatements().getDef()) {
       if (exp instanceof ExpressionDefEvaluator && exp.getName().contains("Test")) {
         testsToRun.add(new Object[]{ library, exp });
@@ -48,9 +48,5 @@ public class QuarterCalculatorTest implements ITest {
   @Override
   public String getTestName() {
     return expression.getName();
-  }
-
-  private static Library translate(String file)  throws UcumException, IOException {
-    return new TranslatorHelper().translate(file);
   }
 }

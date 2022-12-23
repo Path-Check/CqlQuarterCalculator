@@ -4,11 +4,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.cqframework.cql.elm.execution.ExpressionDef;
-import org.cqframework.cql.elm.execution.Library;
 import org.fhir.ucum.UcumException;
 import org.opencds.cqf.cql.engine.elm.execution.ExpressionDefEvaluator;
 import org.opencds.cqf.cql.engine.execution.Context;
@@ -19,21 +19,22 @@ import org.testng.annotations.Test;
 
 public class QuarterCalculatorTest implements ITest {
   private ExpressionDef expression;
-  private Library library;
+  private Context ctx;
   @Factory(dataProvider = "dataMethod")
-  public QuarterCalculatorTest(Library lib, ExpressionDef expression) {
-    this.library = lib;
+  public QuarterCalculatorTest(Context context, ExpressionDef expression) {
+    this.ctx = context;
     this.expression = expression;
   }
 
   @DataProvider
-  public static Object[][] dataMethod() throws UcumException, IOException {
+  public static Object[][] dataMethod() throws UcumException, IOException, URISyntaxException {
     List<Object[]> testsToRun = new ArrayList<>();
 
-    Library library = new CqlCompilerHelper().translate("QuarterCalculator-1.0.0.cql");
-    for (ExpressionDef exp : library.getStatements().getDef()) {
+    Context c = new CqlCompilerHelper().evaluator("QuarterCalculatorTest-1.0.0.cql");
+
+    for (ExpressionDef exp : c.getCurrentLibrary().getStatements().getDef()) {
       if (exp instanceof ExpressionDefEvaluator && exp.getName().contains("Test")) {
-        testsToRun.add(new Object[]{ library, exp });
+        testsToRun.add(new Object[]{ c, exp });
       }
     }
 
@@ -42,7 +43,7 @@ public class QuarterCalculatorTest implements ITest {
 
   @Test
   public void test() {
-    assertThat(expression.getExpression().evaluate(new Context(library)), is(true));
+    assertThat(expression.getExpression().evaluate(ctx), is(true));
   }
 
   @Override

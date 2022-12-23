@@ -10,11 +10,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'info.cqframework:cql-to-elm:2.4.0'
     testImplementation 'info.cqframework:model-jackson:2.4.0'
-    testImplementation 'info.cqframework:elm-jackson:2.4.0'
-    testImplementation 'org.opencds.cqf.cql:engine:2.4.0'
-    testImplementation 'org.opencds.cqf.cql:engine.jackson:2.4.0'
+    testImplementation 'org.opencds.cqf.cql:evaluator:2.4.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testImplementation 'org.hamcrest:hamcrest:2.2'

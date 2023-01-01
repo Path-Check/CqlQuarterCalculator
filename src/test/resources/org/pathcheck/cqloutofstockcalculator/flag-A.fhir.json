@@ -1,0 +1,42 @@
+{
+  "resourceType": "Flag",
+  "id": "flag-a",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2022-12-29T17:44:55.452+00:00"
+  },
+  "status": "active",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "386452003",
+          "display": "Supply management"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "419182006",
+        "display": "Supplies not available"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Group/c7f60dc4-6a48-11ed-a1eb-0242ac120002"
+  },
+  "period": {
+    "start": "2022-12-20",
+    "end": "2023-01-05"
+  },
+  "encounter": {
+    "reference": "Encounter/6f3970e0-d1d6-4a7a-a950-939f3ca7b301"
+  },
+  "author": {
+    "reference": "Practitioner/3812"
+  }
+}

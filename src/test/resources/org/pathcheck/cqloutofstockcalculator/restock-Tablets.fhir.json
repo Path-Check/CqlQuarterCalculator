@@ -1,0 +1,71 @@
+{
+  "resourceType": "Observation",
+  "id": "6f902cb0-538b-46fa-943d-39671d3e9a172",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2022-12-29T18:13:21.405+00:00",
+    "source": "#d47d344fbf7ffa41",
+    "tag": [
+      {
+        "system": "https://smartregister.org/",
+        "code": "2",
+        "display": "Practitioner Organization"
+      },
+      {
+        "system": "https://smartregister.org/",
+        "code": "3811",
+        "display": "Practitioner CareTeam"
+      },
+      {
+        "system": "https://smartregister.org/",
+        "code": "3812",
+        "display": "Practitioner"
+      },
+      {
+        "system": "https://smartregister.org/",
+        "code": "5",
+        "display": "Practitioner Location"
+      }
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "386452003"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "422106007"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/inventoryreport-counttype",
+          "code": "addition"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "text": "restock"
+  },
+  "subject": {
+    "reference": "Group/c7f60dc4-6a48-11ed-a1eb-0242ac120002"
+  },
+  "effectiveDateTime": "2022-12-01T16:25:49+03:00",
+  "valueQuantity": {
+    "value": 20,
+    "unit": "Tablets",
+    "system": "http://snomed.info/sct",
+    "code": "767525000"
+  }
+}

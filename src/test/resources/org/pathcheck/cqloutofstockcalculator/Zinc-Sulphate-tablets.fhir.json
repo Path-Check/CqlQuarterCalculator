@@ -1,0 +1,52 @@
+{
+  "resourceType": "Group",
+  "id": "c7f60dc4-6a48-11ed-a1eb-0242ac120002",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2022-11-25T16:44:15.127+00:00",
+    "source": "#a674d228edcf33cb"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "value": "43245336459"
+    }
+  ],
+  "active": true,
+  "type": "medication",
+  "actual": false,
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "386452003",
+        "display": "Supply management"
+      }
+    ]
+  },
+  "name": "Zinc Sulfate 10mg, Tabs",
+  "characteristic": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "767524001",
+            "display": "Unit of measure"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "767525000",
+            "display": "Unit"
+          }
+        ],
+        "text": "tablets"
+      },
+      "exclude": true
+    }
+  ]
+}

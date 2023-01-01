@@ -1,0 +1,24 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "3815",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2022-09-30T11:33:56.182+00:00",
+    "source": "#ae4bd1e1e5213bd4"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "value": "f4ca2972-4401-4040-a92d-fa706c27714c"
+    }
+  ],
+  "active": true,
+  "practitioner": {
+    "reference": "Practitioner/3812",
+    "display": "Demo User"
+  },
+  "organization": {
+    "reference": "Organization/2",
+    "display": "eCBIS Default Organization"
+  }
+}

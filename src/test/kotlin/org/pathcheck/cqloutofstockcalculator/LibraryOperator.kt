@@ -31,7 +31,7 @@ import org.pathcheck.cqloutofstockcalculator.InMemoryFhirDal
 class LibraryOperator(val database: Bundle) {
   private val fhirContext = FhirContext.forCached(FhirVersionEnum.R4)
 
-  fun buildProcessor(fhirDal: FhirDal): LibraryProcessor {
+  fun buildProcessor(): LibraryProcessor {
     val adapterFactory = AdapterFactory()
     val libraryVersionSelector = LibraryVersionSelector(adapterFactory)
     val fhirTypeConverter = FhirTypeConverterFactory().create(fhirContext.version.version)
@@ -104,10 +104,7 @@ class LibraryOperator(val database: Bundle) {
         .setAddress("localhost")
         .setConnectionType(Coding().setCode(Constants.HL7_FHIR_FILES))
 
-    val fhirDal = InMemoryFhirDal()
-    fhirDal.addAll(database)
-
-    return buildProcessor(fhirDal).evaluate(
+    return buildProcessor().evaluate(
       libraryUrl,
       patientId,
       parameters,

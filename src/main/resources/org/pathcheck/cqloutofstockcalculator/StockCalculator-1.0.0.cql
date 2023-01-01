@@ -21,7 +21,7 @@ define "Flags that Intersect with Measurement Period": "Flags that Intersect wit
 define function "Sum Of Collapsed Intervals"(intervals List<Interval<DateTime>>):
     Sum((collapse intervals) CollapsedInterval
         return all duration in days of CollapsedInterval
-    ) + 1
+    ) + 1 // This is due to the bug below. Duration always truncates dates.
 
 /**
     There is a bug in hours. This does not work.

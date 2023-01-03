@@ -6,10 +6,15 @@ include FHIRHelpers version '4.0.1'
 
 parameter "Measurement Period" Interval<Date>
 
+codesystem "SNOMED": 'http://snomed.info/sct'
+code "Supplies not available":
+  '419182006' from "SNOMED" display 'Supplies not available'
+
 // Returns all flags that overlap with the period.
 define function "Flags that Intersect with"(period Interval<DateTime>):
     [Flag] F where F.period overlaps period
-             return F.period intersect period
+               and F.code = "Supplies not available"
+            return F.period intersect period
 
 define "Flags that Intersect with Measurement Period": "Flags that Intersect with"("Measurement Period")
 

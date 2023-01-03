@@ -1,10 +1,6 @@
 package org.pathcheck.cqloutofstockcalculator
 
-import org.hl7.fhir.r4.model.Bundle
-import org.hl7.fhir.r4.model.IntegerType
-import org.hl7.fhir.r4.model.Parameters
-import org.hl7.fhir.r4.model.Period
-import org.hl7.fhir.r4.model.Resource
+import org.hl7.fhir.r4.model.*
 import org.testng.annotations.Test
 import java.sql.Date
 import java.time.LocalDate

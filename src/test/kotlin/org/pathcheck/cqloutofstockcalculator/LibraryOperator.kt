@@ -23,10 +23,8 @@ import org.opencds.cqf.cql.evaluator.cql2elm.util.LibraryVersionSelector
 import org.opencds.cqf.cql.evaluator.engine.retrieve.BundleRetrieveProvider
 import org.opencds.cqf.cql.evaluator.engine.terminology.BundleTerminologyProvider
 import org.opencds.cqf.cql.evaluator.fhir.adapter.r4.AdapterFactory
-import org.opencds.cqf.cql.evaluator.fhir.dal.FhirDal
 import org.opencds.cqf.cql.evaluator.library.CqlFhirParametersConverter
 import org.opencds.cqf.cql.evaluator.library.LibraryProcessor
-import org.pathcheck.cqloutofstockcalculator.InMemoryFhirDal
 
 class LibraryOperator(val database: Bundle) {
   private val fhirContext = FhirContext.forCached(FhirVersionEnum.R4)
